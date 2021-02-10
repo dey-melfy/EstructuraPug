@@ -1,0 +1,48 @@
+block config
+    include ../config/config.pug
+block mixin
+    include ../mixins/mixin.pug
+
+//-configuracion del head----------------------------------->
+
+<!DOCTYPE html>
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="description", content=description)
+
+        //-para añadir el titulo de las pagina en comun
+        block title
+            title #{pagetitle} | #{sitetitle}
+
+        //-para añadir las hojas de estilos en comun
+        block  styles 
+            link(rel="stylesheet", href=estilosCss) 
+
+    //-configuracion del documento------------------------------>      
+    body
+        block header
+            include ../blocks/header.pug        
+        block banner
+            include ../blocks/banner.pug
+
+        block main
+            if iframe==true
+                include ../blocks/main.pug
+                if article==true
+                    include ../blocks/article.pug
+            else
+                include ../blocks/iframe.pug 
+            
+        block aside
+            include ../blocks/aside.pug
+
+        block footer
+            include ../blocks/footer.pug
+
+
+        
+        //-para añadir los scripts en comun
+        block  scripts
+            script(src=scripts)         

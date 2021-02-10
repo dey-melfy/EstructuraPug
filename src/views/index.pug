@@ -1,0 +1,16 @@
+extends templates/template.pug
+
+//-para sobreescribir las variables del config
+append config
+    //-variables y configuracion del head
+    -pagetitle='Home'    
+    -description='Somos mas que vencedores'
+    -currentPage='inicio'
+    -sitetitle='Empresas ABC S.R.L'    
+
+//-para añadir las hojas de estilos css individual 
+append  styles    
+
+//-para añadir los script individual
+append  scripts
+    script(src="/js/main-min.js")

@@ -1,0 +1,8 @@
+//-enlaces de del menu del nav
+mixin linksMenu
+    ul.ul
+    each page in pages
+        if page=='Inicio'
+            li: a(href='/') #{page}
+        else
+            li: a(href=page+'.html') #{page}
